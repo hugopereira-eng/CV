@@ -1,0 +1,56 @@
+% --------------------------Packages--------------------------
+
+
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{blindtext}
+
+
+% -------------------------Commands-------------------------
+
+
+\newcommand{\Education}[4]{
+\vspace{-14pt}
+\begin{table}[h!]
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{#2} \\
+      #3 & #4 \\
+    \end{tabular*} 
+\end{table} \vspace{-8pt}
+}
+
+\newcommand{\Company}[2]{
+    \begin{flushleft}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{#2}
+    \end{tabular*}
+    \end{flushleft} \vspace{-10pt}
+}
+
+\newcommand{\Position}[2]{
+	\hspace*{1em}
+    \begin{tabular*}{0.95\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{#1} & \textit{#2}
+    \end{tabular*}\vspace{2pt}
+}
+
+\newcommand{\ItemListStart}{\begin{itemize}\vspace{-10pt}\itemsep-2pt}
+
+\newcommand{\ItemListEnd}{\end{itemize}\vspace{-12pt}}
+
+\newcommand{\ItemWithTitle}[2]{
+  \item\textbf{\small{#1:}}\hspace{2pt}{\small{#2}}
+}
+
+\newcommand{\ItemWithoutTitle}[1]{
+  \item{#1}
+}
