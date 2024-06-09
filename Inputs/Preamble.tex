@@ -14,41 +14,69 @@
 \usepackage{blindtext}
 
 
-
 % ------------------------Custom Commands------------------------
 
-
+% Education
+% Inputs:
+% #1 - University
+% #2 - Start and end of studies
+% #3 - Name of the degree
+% #4 - Grade point average (optional)
 \newcommand{\Education}[4]{
-\vspace{-14pt}
+\vspace{-16pt}
 \begin{table}[h!]
     \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textit{#2} \\
-      #3 & #4 \\
+      \textbf{#1} & #2 \\ #3 & #4
     \end{tabular*} 
-\end{table} \vspace{-8pt}
+\end{table}
 }
 
-\newcommand{\Company}[2]{
+% Institution
+% Inputs:
+% #1 - Name of the institution
+% #2 - Geographic location (optional)
+\newcommand{\Institution}[2]{
     \begin{flushleft}
     \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textit{#2}
+    \textbf{#1} & \textit{#2}
     \end{tabular*}
-    \end{flushleft} \vspace{-10pt}
+    \end{flushleft}  \vspace{-2em}
 }
 
+% Institution w/ Image
+% Inputs:
+% #1 - Logo
+% #2 - URL (optional)
+% #3 - Name of the institution
+% #4 - Geographic location (optional)
+\newcommand{\InstitutionWImage}[4]{
+    \begin{flushleft}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+ \href{#2}{\includegraphics[height=10pt]{#1}}~~\textbf{#3} & \textit{#4}
+    \end{tabular*}
+    \end{flushleft}  \vspace{-2em}
+}
+
+% Position
+% Inputs:
+% #1 - Name of the position
+% #2 - Start and end dates 
 \newcommand{\Position}[2]{
-	\hspace*{1em}
-    \begin{tabular*}{0.95\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{#1} & \textit{#2}
-    \end{tabular*}\vspace{2pt}
+ \begin{flushleft}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \quad \textit{#1} & \textit{#2}
+    \end{tabular*}
+    \end{flushleft} \vspace{-2em}
 }
 
-\newcommand{\ItemListStart}{\begin{itemize}\vspace{-10pt}\itemsep-2pt}
 
-\newcommand{\ItemListEnd}{\end{itemize}\vspace{-12pt}}
+\newcommand{\ItemListStart}{\begin{itemize}\itemsep-2pt}
+
+\newcommand{\ItemListEnd}{\end{itemize}\vspace{-10pt}}
+
 
 \newcommand{\ItemWithTitle}[2]{
-  \item\textbf{\small{#1:}}\hspace{2pt}{\small{#2}}
+  \item \textit{#1}.~{#2}
 }
 
 \newcommand{\ItemWithoutTitle}[1]{
