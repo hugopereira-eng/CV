@@ -45,41 +45,56 @@ right  = 1.2cm]{geometry}
 \begin{document}
 
 
-
+% with profile picture
 %---------------------------------HEADER---------------------------------
-\begin{minipage}{6.5cm}
-\vspace{-1.5em}
-\hspace{0.5cm}
-\begin{tikzpicture}
-    \clip (0,0) circle (2cm) node {\includegraphics[scale=0.18]{Images/profile-2}};
-\end{tikzpicture}
-%\includegraphics[scale=0.4]{Images/profile}  % uncomment for non-circular frame (and comment the 3 lines above)
-\end{minipage}
-\begin{minipage}{10.5cm}
+% \begin{minipage}{6.5cm}
+% \vspace{-1.5em}
+% \hspace{0.5cm}
+% \begin{tikzpicture}
+%     \clip (0,0) circle (2cm) node {\includegraphics[scale=0.18]{Images/profile-2}};
+% \end{tikzpicture}
+% %\includegraphics[scale=0.4]{Images/profile}  % uncomment for non-circular frame (and comment the 3 lines above)
+% \end{minipage}
+% \begin{minipage}{10.5cm}
+% \vspace{-1em}
+% \centerline{\Huge \textbf{Hugo Pereira}}
+% \vspace{8pt}
+% \centerline{\large \href{mailto:hugoacpereira@gmail.com}{hugoacpereira@gmail.com}}
+% \centerline{\large (+351) 96 33 62 767}
+% \centerline{\large Lisbon, Portugal} 
+% \vspace{8pt}
+% \centerline{
+% \href{https://www.linkedin.com/in/hugoacpereira/}{\includegraphics[height=10pt]{Images/linkedin}~\footnotesize{}}
+% \quad
+% \href{https://github.com/hugopereira-eng}{\includegraphics[height=10pt]{Images/github}~\footnotesize{}}
+% \quad
+% \href{https://orcid.org/0000-0002-0635-0912}{\includegraphics[height=10pt]{Images/ORCID}~\footnotesize{}}
+% }
+% \end{minipage} 
+
+
+% without profile picture
+%---------------------------------HEADER---------------------------------
 \vspace{-1em}
 \centerline{\Huge \textbf{Hugo Pereira}}
 \vspace{8pt}
-\centerline{\large \href{mailto:hugo.c.pereira@tecnico.ulisboa.pt}{hugo.c.pereira@tecnico.ulisboa.pt}}
+\centerline{\large \href{mailto:hugoacpereira@gmail.com}{hugoacpereira@gmail.com}}
 \centerline{\large (+351) 96 33 62 767}
 \centerline{\large Lisbon, Portugal} 
 \vspace{8pt}
-%\href{https://www.linkedin.com/in/hugoacpereira/}{\includegraphics[height=10pt]{Images/linkedin}~\footnotesize{linkedin.com/in/hugoacpereira/}}
 \centerline{
 \href{https://www.linkedin.com/in/hugoacpereira/}{\includegraphics[height=10pt]{Images/linkedin}~\footnotesize{}}
 \quad
-%\href{https://github.com/hugopereira-eng}{\includegraphics[height=10pt]{Images/github}~\footnotesize{github.com/hugopereira-eng}} 
-%\href{https://orcid.org/0000-0002-0635-0912}{\includegraphics[height=10pt]{Images/ORCID}~\footnotesize{orcid.org/0000-0002-0635-0912}}
+\href{https://github.com/hugopereira-eng}{\includegraphics[height=10pt]{Images/github}~\footnotesize{}}
+\quad
 \href{https://orcid.org/0000-0002-0635-0912}{\includegraphics[height=10pt]{Images/ORCID}~\footnotesize{}}
 }
-\end{minipage} 
-
 
 
 %-------------------------------SUMMARY--------------------------------
 %\section{Summary}
 % - optional section
  
-
 
 %------------------------------EDUCATION-------------------------------
 \section{Education}
@@ -97,20 +112,18 @@ right  = 1.2cm]{geometry}
 %\vspace{5pt}
 
 
-
 %-----------------------------RESEARCH-EXPERIENCE-------------------------------
 \section{Research Experience}
 
 \InstitutionWImage{Images/ISR}{https://welcome.isr.tecnico.ulisboa.pt/}{Institute for Systems and Robotics, IST-UL}{Lisbon, Portugal}
-\Position{Student Researcher~~(Full-time)}{Mar.~2022 - June~2023}
+\Position{Graduate Student Researcher~~(Full-time)}{Mar.~2022 - June~2023}
 \ItemListStart
         % \ItemWithoutTitle{Received a research fellowship to study the applications of embedded optimization in spacecraft attitude control for missions with agility requirements. Supervisors: Prof.~Pedro Batista and Dr.~Pedro Lourenço.}
         \ItemWithoutTitle{Research on singularity avoidance for spacecraft attitude control with control moment gyros (CMGs).}
         \ItemWithoutTitle{Derived a novel convex MPC-based solution for CMG allocation.}
-        \ItemWithoutTitle{Developed a medium-fidelity 6 DoF simulator for astrodynamics in the LEO enviroment.}
+        \ItemWithoutTitle{Developed a medium-fidelity 6 DoF simulator for spacecraft dynamics in LEO.}
         \ItemWithoutTitle{Worked towards my master's thesis titled \textit{"A Convex Allocation Framework for Singularity Avoidance in Control Moment Gyro Clusters"}, which was awarded the grade of 20 out of 20.}
 \ItemListEnd 
-
 
 
 %-----------------------------WORK-EXPERIENCE-------------------------------
@@ -118,12 +131,11 @@ right  = 1.2cm]{geometry}
 \InstitutionWImage{Images/GMV}{https://www.gmv.com/en-es/}{GMV}{Lisbon, Portugal}
 \Position{Control systems engineer~~(Full-time)}{July~2023 - Present}
 \ItemListStart
-        \ItemWithoutTitle{Responsible for the design and development of the attitude controllers for the Rapid Apophis Mission for Space Safety (RAMSES) through the PDR and CDR phases. Carried out control synthesis and frequency-domain analysis for all the control modes of the GNC (S/C detumbling, Sun pointing operations during Safe mode, RW and RCT control for attitude stabilization and slew maneuvers, and wheel off-loading).}
-        \ItemWithoutTitle{Co-developed the attitude controllers for the ARIEL telescope during the PDR phase. Integrated and fine-tuned an estimator for star tracker bias removal by fusing fine guidance sensor data.}
-        % \ItemWithoutTitle{Responsible for the full attitude control system of the Rapid Apophis Mission for Space Safety (RAMSES) that will rendezvous with the asteroid Apophis in April 2029.}
+        \ItemWithoutTitle{Responsible for the design and development of the attitude controllers for the Rapid Apophis Mission for Space Safety (RAMSES) through PDR and CDR phases. Carried out control synthesis and frequency-domain analysis for all the control modes of the GNC (S/C detumbling, Sun pointing operations during Safe mode, RW and RCT control for attitude stabilization and slew maneuvers, and wheel off-loading).}
+        \ItemWithoutTitle{Co-developed the attitude controllers for the ARIEL telescope. Worked out a solution for attitude estimation by combining star tracker data with fine guidance sensor measurements.}
         \ItemWithoutTitle{Worked as a system engineer during the development of a testbed for single-axis attitude control of a spacecraft with challenging flexible dynamics. Co-developed an in-house reaction wheel, designed the avionics for the platform, handled all the hardware procurement, and took responsibility in the development of a digital twin using \textsc{Matlab}/\textsc{Simulink}.}
         \ItemWithoutTitle{Participated in several stages of research-oriented ESA-funded activities on spacecraft collision avoidance (literature review and requirements definition) and space launchers (derivation of flight dynamics models and synthesis of convex methods for thruster allocation).}
-        \ItemWithoutTitle{Co-supervised and oversaw the work of five interns on the topics of convex optimization, control theory, and system identification applied to space structures.}
+        \ItemWithoutTitle{Co-supervised and oversaw the work of five interns on the topics of convex optimization, control theory, and system identification applied to flexible space structures.}
 \ItemListEnd
 
 \newpage
@@ -140,7 +152,6 @@ right  = 1.2cm]{geometry}
 \ItemListStart
         \ItemWithoutTitle{Short-term internship where I contributed to the design of a signal demodulation program for an Emergency Position Indicating Radio Beacon. The system, developed in collaboration with other interns, was sketched in GNU Radio and written in Python.}
 \ItemListEnd
-
 
 
 %---------------------EXTRACURRICULAR-ACTIVITIES------------------------
@@ -189,11 +200,11 @@ H.~Pereira, P.~Lourenço, P.~Batista, \textit{From singularity analysis to singu
 \vspace{-10pt}
 
 \begin{align*}
-&\text{\textbf{Languages}} &&\text{English (C1 certificate), Portuguese (Native)}\\
+&\text{\textbf{Languages}} &&\text{English (C2), Portuguese (Native), Spanish (B1)}\\
 &\text{\textbf{Programming}} &&\text{C++, C, \textsc{Matlab}, Python} \\
 % &\text{\textbf{Frameworks}} &&\text{PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy} \\
 &\text{\textbf{Software}} &&\text{\textsc{Simulink}, KiCad, OpenRocket, SolidWorks}\\
-&\text{\textbf{Tools}} &&\text{Git, \textsc{LaTex}, Microsoft Office}\\
+&\text{\textbf{Tools}} &&\text{Git, \textsc{LaTex}, Microsoft Office, Jira}\\
 &\text{\textbf{Platforms}} &&\text{Linux, Windows, ROS, STM32, PIC24, Arduino}\\
 &\text{\textbf{Miscellaneous}} &&\text{Soldering, Driving License}
 \end{align*}
@@ -207,7 +218,6 @@ H.~Pereira, P.~Lourenço, P.~Batista, \textit{From singularity analysis to singu
 \ItemWithTitle{Ladybird Guide to Spacecraft Communications Training Course, 2022, ESA Academy}{Selected to attend a remote spacecraft communications course featuring live sessions given by ESA experts.}
 \ItemWithTitle{Summer course in Robotics, University of Twente, Aug.~2019}{On-site summer camp in Robotics at the University of Twente in the Netherlands. This consisted of a hands-on experience with real-time robotics systems and included a group project centered on Arduino manipulation.}
 \ItemListEnd
-
 
 
 %--------------------------VOLUNTEERING-----------------------------
@@ -225,7 +235,6 @@ H.~Pereira, P.~Lourenço, P.~Batista, \textit{From singularity analysis to singu
 \ItemListEnd
 
 
-
 %-------------------------------AWARDS----------------------------------
 \section{Honors and Awards}
 
@@ -236,7 +245,6 @@ H.~Pereira, P.~Lourenço, P.~Batista, \textit{From singularity analysis to singu
 \item {Academic Merit, Instituto Superior Técnico, 2017/2018, 2019/2020}
 \item {Best Student Award, Escola Secundária Marquesa de Alorna, 2015/2016, 2016/2017}
 \end{description}
-
 
 
 %----------------------------ACTIVITIES---------------------------------
@@ -250,7 +258,6 @@ H.~Pereira, P.~Lourenço, P.~Batista, \textit{From singularity analysis to singu
 % \end{description}
 
 
-
 %----------------------------CERTIFICATES-----------------------------
 %\section{Certificates}
 %
@@ -260,7 +267,6 @@ H.~Pereira, P.~Lourenço, P.~Batista, \textit{From singularity analysis to singu
 %\item {Drone Simulation and Control, 2020, MOOC TÉCNICO}
 %\item {European BEST Engineering Competition, 2018, BEST}
 %\end{description}
-
 
 
 \end{document}
