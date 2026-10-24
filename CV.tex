@@ -22,6 +22,14 @@
   \vspace{-1em}\scshape\Large\bfseries
 }{}{10pt}{}[\color{black}\titlerule]
 
+% Avoid early section breaks while keeping headings with the first few lines.
+\newcommand{\sectionbreak}{%
+  \addpenalty{0}%
+  \ifdim\dimexpr\pagegoal-\pagetotal\relax<7\baselineskip
+    \newpage
+  \fi
+}
+
 % Margins 
 \usepackage[
 top    = 1.2cm,
@@ -115,41 +123,82 @@ right  = 1.2cm]{geometry}
 %-----------------------------RESEARCH-EXPERIENCE-------------------------------
 \section{Research Experience}
 
+\InstitutionWImage{Images/CMU}{https://www.cmu.edu/}{Carnegie Mellon University, ECE department}{Pittsburgh, USA}
+\Position{Visiting Researcher~~(Full-time)}{Sep.~2026 - Present}
+\ItemListStart
+        \ItemWithoutTitle{Researching GPU-parallel solvers for model predictive control.}
+        \ItemWithoutTitle{Extending the parallel scan method to constrained optimal control problems, including its integration with operator splitting methods such as the ADMM and the progressive decoupling algorithm (PDA).}
+        \ItemWithoutTitle{Working on native CUDA C++ implementations of these solvers, tailored to specific GPU architectures.}
+        \ItemWithoutTitle{Supervisors: Prof. Soummya Kar (CMU), Prof. João Xavier (ISR/IST) and Dr. Pedro Lourenço (GMV).}
+\ItemListEnd 
+
 \InstitutionWImage{Images/ISR}{https://welcome.isr.tecnico.ulisboa.pt/}{Institute for Systems and Robotics, IST-UL}{Lisbon, Portugal}
 \Position{Graduate Student Researcher~~(Full-time)}{Mar.~2022 - June~2023}
 \ItemListStart
         % \ItemWithoutTitle{Received a research fellowship to study the applications of embedded optimization in spacecraft attitude control for missions with agility requirements. Supervisors: Prof.~Pedro Batista and Dr.~Pedro Lourenço.}
-        \ItemWithoutTitle{Research on singularity avoidance for spacecraft attitude control with control moment gyros (CMGs).}
+        \ItemWithoutTitle{Did research on singularity avoidance for spacecraft attitude control with control moment gyros (CMGs).}
         \ItemWithoutTitle{Derived a novel convex MPC-based solution for CMG allocation.}
         \ItemWithoutTitle{Developed a medium-fidelity 6 DoF simulator for spacecraft dynamics in LEO.}
-        \ItemWithoutTitle{Worked towards my master's thesis titled \textit{"A Convex Allocation Framework for Singularity Avoidance in Control Moment Gyro Clusters"}, which was awarded the grade of 20 out of 20.}
+        \ItemWithoutTitle{Worked towards my master's thesis titled \textit{``A Convex Allocation Framework for Singularity Avoidance in Control Moment Gyro Clusters''}, which was awarded the grade of 20 out of 20.}
+        \ItemWithoutTitle{Supervisors: Prof. Pedro Batista (ISR/IST) and Dr. Pedro Lourenço (GMV).}
 \ItemListEnd 
+
+
+%----------------------------PUBLICATIONS---------------------------------
+\section{Publications}
+
+\noindent
+\textbf{[3]}~~Á.~Palomino, F.~Arribas, G.~Landa, \textbf{H.~Pereira} et al., \textit{``A rapid response mission to Apophis: challenges and solutions through autonomous guidance, navigation and control"}, in Proceedings of the ESA GNC \& ICATT Conference 2026, Seville, Spain (Sep-Oct. 2026) \href{https://www.researchgate.net/publication/416769451_A_rapid_response_mission_to_Apophis_challenges_and_solutions_through_autonomous_guidance_navigation_and_control}{\textbf{[url]}}.
+\vskip 6pt
+\noindent
+\textbf{[2]}~~J.~F.~Briz, E.~de~Brito, M.~Rubaga, M.~Ferreira, L.~Ferreira, \textbf{H.~Pereira} et al., \textit{``Tractor-Beam: An Experimental Testbed for Control of In-Orbit Servicing Systems with Varying Flexible Dynamics and Inertia"}, in Proceedings of the CEAS EuroGNC 2026 Conference, Madrid, Spain (May 2026), \href{https://eurognc.ceas.org/archive/EuroGNC2026/html/CEAS-GNC-2026-062.html}{doi:~10.82124/CEAS-GNC-2026-062}.
+\vskip 6pt
+\noindent
+\textbf{[1]}~~\textbf{H.~Pereira}, P.~Lourenço, P.~Batista, \textit{``From singularity analysis to singularity avoidance: novel metric and convex allocation for spacecraft attitude control with control moment gyros"}, Acta Astronautica 225 (2024) 41-54, \href{https://doi.org/10.1016/j.actaastro.2024.08.047}{doi:~10.1016/j.actaastro.2024.08.047}.
+\vskip 6pt
+\noindent
+\href{https://fenix.tecnico.ulisboa.pt/cursos/meaer21/dissertacao/846778572213772}{[\textbf{MSc thesis}]} \textit{``A Convex Allocation Framework for Singularity Avoidance in Control Moment Gyro Clusters"}, Instituto Superior Técnico, 2022.
+
+
+%----------------TALKS---------------------
+\section{Talks}
+
+\ItemListStart
+\ItemWithTitle{``A rapid response mission to Apophis: challenges and solutions through autonomous guidance, navigation and control''}{12\textsuperscript{th} International Workshop and Advanced School on Spaceflight Dynamics and Control, UBI Covilhã, 18-20 May 2026.}
+\ItemListEnd
 
 
 %-----------------------------WORK-EXPERIENCE-------------------------------
 \section{Work Experience}
 \InstitutionWImage{Images/GMV}{https://www.gmv.com/en-es/}{GMV}{Lisbon, Portugal}
-\Position{Control systems engineer~~(Full-time)}{July~2023 - Present}
+\Position{Control Systems Engineer~~(Full-time)}{July~2023 - Present}
 \ItemListStart
-        \ItemWithoutTitle{Responsible for the design and development of the attitude controllers for the Rapid Apophis Mission for Space Safety (RAMSES) through the PDR and CDR phases; Carried out control synthesis and frequency-domain analyses for all the control modes of the GNC (S/C detumbling, Sun pointing operations during Safe mode, RW and RCT control for attitude stabilization and slew maneuvers, and wheel off-loading). Comparing to HERA, the attitude controllers I developed resulted in significant pointing improvements and a reduced propellant consumption, enabling extended periods in proximity operations; Co-developed attitude navigation solutions (gyro-stellar \& gyroscopic torque estimator), FDIR algorithms for thruster failure detection, and actuator management functions; Performed extensive Monte Carlo simulations across multiple representative in-orbit scenarios and conducted unit tests for several GNC functions.}
-        \ItemWithoutTitle{Co-developed the attitude controllers for the ARIEL telescope through the PDR and CDR phases; Designed a solution for attitude estimation by combining star tracker data with fine guidance sensor measurements; Derived guidance profiles for downlink communications based on Chebyshev polynomials.}
-        \ItemWithoutTitle{Worked as a system engineer during the development of a testbed for single-axis attitude control of a spacecraft with challenging flexible dynamics; Co-developed an in-house reaction wheel, designed the avionics for the platform based on Raspberry Pi and Wi-Fi communication, handled all the hardware procurement, and took responsibility in the development of a digital twin using \textsc{Matlab}/\textsc{Simulink}; Carried out MIL, SIL, PIL, and HIL tests for different GNC ideas.}
-        \ItemWithoutTitle{Participated in several stages of research-oriented ESA-funded activities on spacecraft collision avoidance (literature review and requirements definition) and space launchers (derivation of flight dynamics models and synthesis of convex methods for thruster allocation).}
+        \ItemWithoutTitle{Responsible for the design and development of the attitude controllers for the Rapid Apophis Mission for Space Safety (RAMSES) through the PDR, CDR and TRR phases; Carried out control synthesis, using LQR and pole-placement techniques, and frequency-domain analyses for all the control modes of the GNC (S/C detumbling, Sun pointing operations during Safe mode, RW and RCT control for attitude stabilization and slew maneuvers, and wheel off-loading); Compared with those used on HERA, the attitude controllers I developed resulted in significant pointing improvements and reduced propellant consumption, enabling extended periods in proximity operations; Co-developed attitude navigation solutions (gyro-stellar \& gyroscopic torque estimator), FDIR algorithms for thruster failure detection, and actuator management functions; Performed extensive Monte Carlo simulations across multiple representative in-orbit scenarios and conducted unit tests for several GNC functions.}
+        \ItemWithoutTitle{Co-developed the attitude controllers for the ARIEL telescope, using structured $\mathcal{H}_{\infty}$ control, through the PDR and CDR phases; Designed a solution for attitude estimation by combining star tracker data with fine guidance sensor measurements; Derived guidance profiles for downlink communications based on Chebyshev polynomials.}
+        \ItemWithoutTitle{Worked as a system engineer for the IOANT project during the development of a testbed for single-axis attitude control of a spacecraft equipped with flexible appendages; Co-developed an in-house reaction wheel, designed the avionics for the platform based on Raspberry Pi and Wi-Fi communication, handled most of the hardware procurement, and took responsibility for the development of a digital twin using \textsc{Matlab}/\textsc{Simulink}; Carried out MIL, SIL, PIL, and HIL tests.}
+        \ItemWithoutTitle{Participated in several stages of research-oriented ESA-funded activities on spacecraft collision avoidance (literature review and requirements definition) and space launchers (derivation of flight dynamics models and synthesis of convex optimization methods for thruster allocation).}
         \ItemWithoutTitle{Co-supervised and oversaw the work of five interns on the topics of convex optimization, control theory, and system identification applied to flexible space structures.}
 \ItemListEnd
 
 \InstitutionWImage{Images/IST}{https://deec.tecnico.ulisboa.pt/en/}{Department of Electrical and Computer Engineering, IST-UL}{Lisbon, Portugal}
 \Position{Invited Teaching Assistant~~(Part-time)}{Sep.~2024 - Jan~2025}
 \ItemListStart
-        \ItemWithoutTitle{Served as an invited lecturer for the Convex Optimization course, delivering 6 hrs/week of problem-solving sessions to MSc classes. Helped students with the project work and assisted in grading exams.}
+        \ItemWithoutTitle{Invited lecturer for the Convex Optimization course, delivering 6 hrs/week of problem-solving sessions to MSc classes. Provided support during the project assignments and graded the final exams. Received a final rating of 8.94~/~9.00 from the students.}
 \ItemListEnd
 
 
 \InstitutionWImage{Images/UAVision}{https://www.uavision.com/}{UAVision}{Torres Vedras, Portugal}
-\Position{Summer Intern~~(Full-time)}{June~2021 - July~2021}
+\Position{Summer Intern~~(Full-time)}{June~2020 - July~2020}
 \ItemListStart
         \ItemWithoutTitle{Short-term internship where I contributed to the design of a signal demodulation program for an Emergency Position Indicating Radio Beacon. The system, developed in collaboration with other interns, was sketched in GNU Radio and written in Python.}
 \ItemListEnd
+
+% \InstitutionWImage{Images/Harpia}{}{Harpia Tech S.A}{Aveiro, Portugal}
+% % \Institution{Harpia Tech S.A}{Aveiro, Portugal}
+% \Position{Summer Intern~~(Full-time)}{July~2019 - Aug.~2020}
+% \ItemListStart
+%         \ItemWithoutTitle{Full-time internship in which I collaborated on the development of one of the company's UAVs, focusing on 3D modeling, 2D drawings, and developing new concepts to improve flight endurance.}
+% \ItemListEnd
 
 
 %---------------------EXTRACURRICULAR-ACTIVITIES------------------------
@@ -158,43 +207,41 @@ right  = 1.2cm]{geometry}
 \InstitutionWImage{Images/FST}{https://www.fstlisboa.com/}{Formula Student Lisboa}{Lisbon, Portugal}
 \Position{Autonomous Systems Engineer~~(Part-time)}{Sep.~2021 - Sep.~2022}
 \ItemListStart
-        \ItemWithoutTitle{Developed autonomous driving algorithms, using ROS/C++, for a driverless Formula car. The software pipeline encompasses machine learning for point cloud processing, state estimation via Kalman filtering, simultaneous localization and mapping (SLAM), and model predictive control (MPC).}
-        \ItemWithoutTitle{In specific, I implemented new data association methods for SLAM, developed an iterative closest point (ICP) method for point cloud alignment, implemented point cloud processing algorithms, and designed and fine-tuned longitudinal and lateral nonlinear controllers for path tracking.}
+        \ItemWithoutTitle{Developed autonomous driving algorithms, using ROS/C++, for a driverless Formula car. The algorithms used in the pipeline gathered various state-of-the-art concepts, including machine learning for point cloud processing, state estimation via Kalman filtering, simultaneous localization and mapping (SLAM), and model predictive control (MPC).}
+        \ItemWithoutTitle{Specifically, I implemented new data association methods for SLAM, developed an iterative closest point (ICP) method for point cloud alignment, worked on point cloud processing algorithms, and designed and fine-tuned longitudinal and lateral nonlinear controllers for path following.}
         % \ItemWithoutTitle{Worked under the agile scrum methodology and followed an optimized workflow through CI/CD.}
-        \ItemWithoutTitle{Achieved a $3^{rd}$ place at Formula Student Germany 2022 and a $1^{st}$ at Formula Student Spain 2022 (driverless categories).}
+        \ItemWithoutTitle{Achieved $3^{rd}$ place at Formula Student Germany 2022 and $1^{st}$ at Formula Student Spain 2022 (driverless categories).}
 \ItemListEnd
 
 
-\InstitutionWImage{Images/DanSTAR}{https://www.danstar.dk/}{Danish Student Association for Rocketry}{Copenhagen, Denmark}
+\InstitutionWImage{Images/DanSTAR}{https://danstar.dk/}{Danish Student Association for Rocketry}{Copenhagen, Denmark}
 \Position{Avionics Systems Engineer~~(Part-time)}{Nov.~2020 - Oct.~2021}
 \ItemListStart
         % \ItemWithoutTitle{Member of the electronics department that was in charge of the electrical systems of the rocket. I designed, tested and soldered multiple PCBs for an STM32-based flight computer.}
-        \ItemWithoutTitle{Part of the team that established the world altitude record for bi-liquid propulsion rockets built by college students. Apogee: 6545 m AGL.}
+        \ItemWithoutTitle{Part of the team that established the former world altitude record for bi-liquid propulsion rockets built by college students. Apogee: 6545 m AGL.}
         \ItemWithoutTitle{Led the development of the rocket's telemetry system. Established a communication link based on LoRa technology that operated at a 9~km range. Designed, tested, and debugged PCBs for radio communication, using KiCad, within an STM32-based flight computer architecture.}       
         \ItemWithoutTitle{Carried out robust flight simulations using the OpenRocket software, which resulted in a predicted apogee error of less than 3\%.}
-        \ItemWithoutTitle{Achieved a $1^{st}$ place at the European Rocketry Challenge 2021 (bi-liquid propulsion category).}
+        \ItemWithoutTitle{Achieved $1^{st}$ place at the European Rocketry Challenge 2021 (bi-liquid propulsion category).}
 \ItemListEnd
 
 
 \InstitutionWImage{Images/AeroTec}{https://aerotec.pt/}{Aerospace Engineering Students Group $\vert$ AeroTéc}{Lisbon, Portugal}
-\Position{UAV Engineer~~(Part-time)}{Oct.~2018 -  June~2020}
+\Position{Control Systems Engineer~~(Part-time)}{Oct.~2018 -  June~2020}
 \ItemListStart
-        \ItemWithoutTitle{Built a UAV from scratch over the course of two years. Initially, I was involved in the design, 3D modelling, and construction of the UAV. At a later stage, I joined the development of the flight controller, which involved PID control, filtering, path planning, sensor fusion, and parameter identification. The simulations were conducted in \textsc{Matlab}/\textsc{Simulink} and the on-board code was implemented in an RPi.}
-        \ItemWithoutTitle{Gave workshops about rocketry to high school students. These consisted of a hands-on experience that included planning, building, and launching a small rocket made from cheap conventional materials.}
+        \ItemWithoutTitle{Built a UAV from scratch over the course of two years. Initially, I was involved in the design, 3D modelling, and construction of the UAV. At a later stage, I took part in the development of the flight controller, which involved PID control, filtering, path planning, sensor fusion, and system identification. The simulations were conducted in \textsc{Matlab}/\textsc{Simulink} and the flight code was implemented on an RPi.}
+        \ItemWithoutTitle{Gave workshops about rocketry to high school students. These consisted of a theoretical lesson followed by a hands-on experience that included planning, building, and launching a small rocket made from cheap conventional materials.}
 \ItemListEnd
 
-\newpage
-%----------------------------PUBLICATIONS---------------------------------
-\section{Publications}
 
-\noindent
-\textbf{[2]}~~J.~F.~Briz, E.~de~Brito, M.~Rubaga, M.~Ferreira, L.~Ferreira, H.~Pereira, D.~Oliveira, I.~Colmenarejo, N.~Paulino, P.~Lourenço, V.~Preda, \textit{Tractor-Beam: An Experimental Testbed for Control of In-Orbit Servicing Systems with Varying Flexible Dynamics and Inertia}. Proceedings of the 2026 CEAS EuroGNC conference, Madrid, Spain (May 2026). \href{https://eurognc.ceas.org/archive/EuroGNC2026/html/CEAS-GNC-2026-062.html}{doi:~10.82124/CEAS-GNC-2026-062}.
-\vskip 6pt
-\noindent
-\textbf{[1]}~~H.~Pereira, P.~Lourenço, P.~Batista, \textit{From singularity analysis to singularity avoidance: novel metric and convex allocation for spacecraft attitude control with control moment gyros}. Acta Astronautica 225 (2024) 41-54. \href{https://doi.org/10.1016/j.actaastro.2024.08.047}{doi:~10.1016/j.actaastro.2024.08.047}.
-\vskip 6pt
-\noindent
-\href{https://fenix.tecnico.ulisboa.pt/cursos/meaer21/dissertacao/846778572213772}{[\textbf{MSc thesis}]} H.~Pereira, \textit{A Convex Allocation Framework for Singularity Avoidance in Control Moment Gyro Clusters}, Instituto Superior Técnico, 2022.
+%----------------COMPLEMENTARY-TRAINING---------------------
+\section{Complementary training}
+
+\ItemListStart
+\ItemWithTitle{Inter-Agency GNC V{\&}V Workshop (IAGNC 2025), ISAE-SUPAERO, July~2025}{Short training course on $H_{\infty}$ control and dynamic systems modeling and verification applied to spacecraft attitude control.}
+\ItemWithTitle{Ladybird Guide to Spacecraft Communications Training Course, 2022, ESA Academy}{Selected to attend a remote spacecraft communications course featuring live sessions given by ESA experts.}
+\ItemWithTitle{Summer course in Robotics, University of Twente, Aug.~2019}{On-site summer camp in robotics at the University of Twente in the Netherlands. This consisted of a hands-on experience with real-time robotics systems and included a group project centered on Arduino manipulation.}
+\ItemListEnd
+
 
 %----------------------------------SKILLS------------------------------------
 \section{Skills Summary}
@@ -202,52 +249,53 @@ right  = 1.2cm]{geometry}
 \vspace{-10pt}
 
 \begin{align*}
-&\text{\textbf{Languages}} &&\text{English (C2), Portuguese (Native), Spanish (B1)}\\
-&\text{\textbf{Programming}} &&\text{C++, C, \textsc{Matlab}, Python} \\
+&\text{\textbf{Languages}} &&\text{English (C2, TOEFL: 118/120), Portuguese (Native)}\\
+&\text{\textbf{Programming}} &&\text{C++, C, CUDA, \textsc{Matlab}, Python} \\
 % &\text{\textbf{Frameworks}} &&\text{PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy} \\
-&\text{\textbf{Software}} &&\text{\textsc{Simulink}, KiCad, OpenRocket, SolidWorks}\\
-&\text{\textbf{Tools}} &&\text{Git, \textsc{LaTex}, Microsoft Office, Jira}\\
 &\text{\textbf{Platforms}} &&\text{Linux, Windows, ROS, STM32, PIC24, Arduino}\\
-&\text{\textbf{Miscellaneous}} &&\text{Soldering, Driving License}
+&\text{\textbf{Software}} &&\text{\textsc{Simulink}, KiCad, OpenRocket, SolidWorks}\\
+&\text{\textbf{Tools}} &&\text{Git, \LaTeX, Microsoft Office, Jira}\\
+&\text{\textbf{Miscellaneous}} &&\text{Soldering}
 \end{align*}
 
 
-%----------------COMPLEMENTARY-TRAINING---------------------
-\section{Complementary training}
+%------------------------AWARDS---------------------------
+\section{Awards}
 
 \ItemListStart
-\ItemWithTitle{Inter-Agency GNC V{\&}V Workshop (IAGNC 2025), ISAE-SUPAERO, July.~2025}{Short training course on $H_{\infty}$ control and dynamic systems modeling and verification applied to spacecraft attitude control.}
-\ItemWithTitle{Ladybird Guide to Spacecraft Communications Training Course, 2022, ESA Academy}{Selected to attend a remote spacecraft communications course featuring live sessions given by ESA experts.}
-\ItemWithTitle{Summer course in Robotics, University of Twente, Aug.~2019}{On-site summer camp in Robotics at the University of Twente in the Netherlands. This consisted of a hands-on experience with real-time robotics systems and included a group project centered on Arduino manipulation.}
+\ItemWithoutTitle{Academic Excellence, Instituto Superior Técnico, 2021/2022}
+\ItemWithoutTitle{Outstanding Performance at EuRoc 2021, DTU Blue Dot, Oct. 2021}
+\ItemWithoutTitle{Academic Merit, Instituto Superior Técnico, 2017/2018, 2019/2020}
+\ItemWithoutTitle{Best Student Award, Escola Secundária Marquesa de Alorna, 2015/2016, 2016/2017}
+\ItemListEnd
+
+
+%------------------------FELLOWSHIPS---------------------------
+\section{Fellowships}
+
+\ItemListStart
+\ItemWithoutTitle{Selected for the CMU Portugal Visiting Students Program (2026 call).}
+\ItemWithoutTitle{Awarded an FCT research scholarship under the EMSO-PT project (Call BL264, 2023).}
 \ItemListEnd
 
 
 %--------------------------VOLUNTEERING-----------------------------
 \section{Volunteering}
 
-\Institution{Formula Student Portugal, FSPT25}{July. 2025}
+\Institution{Formula Student Portugal, FSPT}{July 2025 \& July 2026}
 \ItemListStart
-\ItemWithoutTitle{Acted as a design judge for the driverless system, evaluating and providing feedback on teams’ autonomous navigation solutions, including SLAM implementation and Kalman filter design.}
+\ItemWithoutTitle{Acted as a design judge for the driverless cars during the 2025 and 2026 editions. I was responsible for evaluating autonomous navigation solutions, including SLAM implementation and Kalman filter design.}
 \ItemListEnd
 
 \Institution{Erasmus Student Network, DTU section}{Feb. 2021 - June 2021}
 \ItemListStart
-\ItemWithoutTitle{Member of a multinational team of volunteers whose goal is to facilitate the integration of international students in the local community.}
+\ItemWithoutTitle{Member of an international team of volunteers whose goal is to facilitate the integration of international students in the local community.}
 \ItemWithoutTitle{Organized social events and provided general support and guidance for exchange students.}
 \ItemListEnd
 
 
-%-------------------------------AWARDS----------------------------------
-\section{Honors and Awards}
-
-\begin{description}[font=$\circ$]
-\itemsep-2pt 
-\item {Academic Excellence, Instituto Superior Técnico, 2021/2022}
-\item {Outstanding Performance at EuRoc 2021, DTU Blue Dot, Oct. 2021}
-\item {Academic Merit, Instituto Superior Técnico, 2017/2018, 2019/2020}
-\item {Best Student Award, Escola Secundária Marquesa de Alorna, 2015/2016, 2016/2017}
-\end{description}
-
+% \ItemWithoutTitle{Visiting researcher at Carnegie Mellon University through the CMU Portugal program (2026 call).}
+% \ItemWithoutTitle{Recipient of an FCT research scholarship at the Institute for Systems and Robotics under the EMSO-PT project, 2023.}
 
 %----------------------------ACTIVITIES---------------------------------
 % \section{Hobbies and Activities}
